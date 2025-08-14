@@ -1,6 +1,6 @@
 import InstaButton from "./InstaButton"
 import ThemeButton from "./ThemeButton"
-import myHeroW from './logo_white.png'
+import myHeroW from './assets/logo_white.png'
 
 function Header() {
 
