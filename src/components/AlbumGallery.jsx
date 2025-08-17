@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { supabase } from './lib/supabase'
+import { supabase } from '../lib/supabase'
+import { Link } from 'react-router-dom'
 
-export default function AlbumGallerys() {
+export default function Home() {
   const [albums, setAlbums] = useState([])
   const [photos, setPhotos] = useState({})
   const [loading, setLoading] = useState(true)
@@ -50,17 +51,17 @@ export default function AlbumGallerys() {
   if (loading) return <p>Loading albums...</p>
 
   return (
-    <div className=''>
-      <div className="flex flex-col gap-8 px-8">
+      <div className="flex flex-col gap-8 px-8 pb-8">
         {albums.map(album => {
           const albumPhotos = photos[album.album_id] || [];
           const firstPhoto = albumPhotos[0]; // First photo for the album
           const imageUrl = firstPhoto
             ? `https://ghnrakeyvviwyynpxjgm.supabase.co/storage/v1/object/public/images/${firstPhoto.filename}`
             : 'https://placehold.co/300?text=No+Image';
+          const albumName = album.albumName;
 
           return (
-            <div key={album.album_id} className="">
+            <Link key={album.album_id} to={`/album/${album.album_id}`} state={{ albumName: album.album_name }}>
               <div className="bg-cover bg-center w-160 h-70 rounded-lg" style={{ backgroundImage: `url(${imageUrl})` }} >
                 <div className='flex flex-col justify-end size-full w-fill backdrop-saturate-150 backdrop-brightness-70 rounded-lg border border-gray-400'
                 style={{
@@ -79,10 +80,9 @@ export default function AlbumGallerys() {
                 </div>
                 
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
-    </div>
   )
 }
