@@ -1,6 +1,5 @@
 import InstaButton from "./components/InstaButton"
 import myLogoW from './assets/logow.png'
-import Trails from './assets/Trails.png'
 
 function Footer() {
   return (
