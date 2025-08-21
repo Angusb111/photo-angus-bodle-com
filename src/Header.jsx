@@ -5,9 +5,9 @@ function Header({ albumName }) {
   return (
     <div className="sticky max-w-lvw">
     
-        <div className="flex top-0 columns-2 items-center p-4">
-            <div className="flex w-6/10 items-center gap-16">
-                <img className="h-32" id="pageHeaderLogo" src={myHeroW} alt="Logo" />
+        <div className="flex flex-nowrap top-0 columns-2 items-center justify-between p-1 sm:p-4">
+            <div className="flex items-center gap-16">
+                <img className="aspect-418.88/128 max-h-32" id="pageHeaderLogo" src={myHeroW} alt="Logo" />
 
                 {/* Only render this block if albumName is truthy */}
                 {albumName && (
@@ -29,7 +29,7 @@ function Header({ albumName }) {
                 )}
             </div>
 
-            <div className="w-4/10 flex justify-end gap-8 p-8">
+            <div className="flex justify-end gap-8 mt-5 p-4 sm:p-8">
                 <InstaButton />
             </div>
         </div>

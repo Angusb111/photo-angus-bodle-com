@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../App.css";
 import Button1 from "../components/button1";
 import Header from "../Header";
+import Footer from "../Footer";
 import AlbumGallerys from "../components/AlbumGallery";
 
 
@@ -132,28 +133,32 @@ function App() {
         })}
 
       </div>
-
+      
       {/* Your content */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full flex flex-col">
         <div className="">
-            <Header />
-            <div className="flex flex-col justify-center  pt-[160px] mt-20 w-vw">
+          <Header />
+          <div className="flex flex-col justify-center pt-[160px]">
 
-                    <div className="flex flex-row justify-center items-start gap-12">
+            <div className="flex flex-col justify-center items-center gap-12">
 
-                        <div className="flex flex-col text-left gap-2 ">
-                            <p className="font-[Lexend] font-extralight text-5xl">Albums</p>
-                            <p className="font-[Lexend] text-sm w-100 ">Kia ora, I’m Angus – an amateur photographer based in New Zealand. I love capturing landscapes, Sports, experimenting in Astro. This site is my collection of albums, each telling its own story.</p>
-                        </div>
+              <div className="flex flex-col text-left gap-2">
+                  <p className="font-[Coolvetica] font-extralight text-5xl">Kia ora, I’m Angus –</p>
+                  <p className="font-[Lexend] text-sm w-100">An amateur photographer based on the East Coast of New Zealand. I love capturing landscapes, Sports, experimenting in Astro. This site is my collection of albums, each telling its own story.</p>
+              </div>
 
-
-                        <AlbumGallerys />
-                    </div>
+              <AlbumGallerys />
 
             </div>
+
+          </div>
+          
         </div>
+        <Footer/>
       </div>
+      
     </>
+    
   );
 
 }

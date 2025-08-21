@@ -39,7 +39,7 @@ export default function Gallery({ albumId }) {
   const nextPhoto = () => setSelectedIndex((i) => (i < photos.length - 1 ? i + 1 : 0))
 
   return (
-    <div className="p-8">
+    <div className="p-3 sm:p-8 max-w-full">
       {/* Grid of photos */}
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
         {photos.map((photo, idx) => {

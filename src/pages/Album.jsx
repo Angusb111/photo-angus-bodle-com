@@ -5,6 +5,7 @@ import Button1 from "../components/button1";
 import Header from "../Header";
 import AlbumGallerys from "../components/AlbumGallery";
 import Gallery from "../components/Gallery";
+import Footer from "../Footer";
 
 function Album() {
   const { albumId } = useParams()
@@ -136,13 +137,13 @@ function Album() {
         })}
 
       </div>
-
       {/* Your content */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full flex flex-col">
         <Header albumId={albumId} albumName={albumName}/>
-        <div className="z-40 pt-[160px] flex flex-column justify-center">
+        <div className="z-40 md:pt-[160px] flex flex-column justify-center min-h-[calc(100vh*0.7)]">
           <Gallery albumId={albumId}/>
         </div>
+        <Footer/>
       </div>
     </>
   );
