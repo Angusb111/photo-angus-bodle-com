@@ -142,9 +142,14 @@ function App() {
 
             <div className="flex flex-col justify-center items-center gap-12">
 
-              <div className="flex flex-col text-left gap-2">
+              <div className="flex flex-col text-left gap-2 pb-20 w-full sm:w-auto px-10 sm:px-0">
                   <p className="font-[Coolvetica] font-extralight text-5xl">Kia ora, I’m Angus –</p>
-                  <p className="font-[Lexend] text-sm w-100">An amateur photographer based on the East Coast of New Zealand. I love capturing landscapes, Sports, experimenting in Astro. This site is my collection of albums, each telling its own story.</p>
+                  <p className="font-[Lexend] text-sm w-full sm:w-100">An amateur photographer based on the East Coast of New Zealand. I love capturing landscapes, Sports, experimenting in Astro. This site is my collection of albums, each telling its own story.</p>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 mt-20 sm:mt-64 self-center">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+                  </svg>
+
               </div>
 
               <AlbumGallerys />
