@@ -74,6 +74,6 @@
 }
 
 .social-button:hover {
-    background-color: var(--highlight);
+    background-color: rgba(0,166,244,0.6);
     box-shadow: 0 2px 5px var(--shadow);
 }

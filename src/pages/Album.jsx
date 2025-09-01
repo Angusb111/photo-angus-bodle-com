@@ -109,6 +109,8 @@ function Album() {
     moveBlobs();
   }, []);
 
+  const pageType = 'home';
+
   return (
     <>
       {/* Floating blobs */}
@@ -131,18 +133,18 @@ function Album() {
             <div
               key={idx}
               ref={(el) => (blobsRef.current[idx] = el)}
-              className={`absolute size-[15vw] rounded-full blur-3xl opacity-60 origin-center ${blobGradients[idx % blobGradients.length]}`}
+              className={`absolute size-[30vw] sm:size-[15vw] rounded-full blur-xl sm:blur-3xl opacity-40 sm:opacity-60 origin-center ${blobGradients[idx % blobGradients.length]}`}
             ></div>
           );
         })}
 
       </div>
       {/* Your content */}
-      <div className="relative z-10 w-full flex flex-col">
-        <Header albumId={albumId} albumName={albumName}/>
-        <div className="z-40 md:pt-[160px] flex flex-column justify-center min-h-[calc(100vh*0.7)]">
-          <Gallery albumId={albumId}/>
-        </div>
+      <div className="relative z-10 flex flex-col">
+        <Header page={pageType}  albumId={albumId} albumName={albumName}/>
+          <div className="z-40 md:pt-[160px] flex flex-column justify-center min-h-[calc(100vh*0.7)]">
+            <Gallery albumId={albumId}/>
+          </div>
         <Footer/>
       </div>
     </>

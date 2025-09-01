@@ -39,9 +39,9 @@ export default function Gallery({ albumId }) {
   const nextPhoto = () => setSelectedIndex((i) => (i < photos.length - 1 ? i + 1 : 0))
 
   return (
-    <div className="p-3 sm:p-8 max-w-full">
+    <div className="p-3 sm:p-8 max-w-full flex justify-center">
       {/* Grid of photos */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
+      <div className="flex sm:max-w-[90%] md:max-w-[75%] flex-col sm:flex-row justify-center gap-5">
         {photos.map((photo, idx) => {
           const imageUrl = `https://ghnrakeyvviwyynpxjgm.supabase.co/storage/v1/object/public/images/${photo.filename}`
 
@@ -50,13 +50,9 @@ export default function Gallery({ albumId }) {
               <img
                 src={imageUrl}
                 alt={photo.filename}
-                className="w-full shadow-md hover:opacity-80 transition"
+                className="w-full shadow-md hover:opacity-80 transition rounded-sm border-2 border-black shadow-black shadow-2xl"
               />
-              {photo.caption && (
-                <p className="flex text-white text-sm pt-2 font-[Lexend] font-light">
-                  {photo.caption}
-                </p>
-              )}
+
             </div>
           )
         })}
@@ -74,7 +70,7 @@ export default function Gallery({ albumId }) {
 
             {/* Close button */}
             <button
-              className="absolute top-4 right-4 text-white text-3xl font-bold"
+              className="absolute -top-0 -right-14 text-white text-3xl font-bold"
               onClick={handleClose}
             >
               &times;
@@ -82,7 +78,7 @@ export default function Gallery({ albumId }) {
 
             {/* Prev button */}
             <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
+              className="absolute -left-10 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
               onClick={prevPhoto}
             >
               &#8249;
@@ -90,7 +86,7 @@ export default function Gallery({ albumId }) {
 
             {/* Next button */}
             <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
+              className="absolute -right-10 top-1/2 -translate-y-1/2 text-white text-4xl font-bold"
               onClick={nextPhoto}
             >
               &#8250;

@@ -104,7 +104,7 @@ function App() {
 
     moveBlobs();
   }, []);
-
+  const pageType = '';
   return (
     <>
       {/* Floating blobs */}
@@ -137,7 +137,7 @@ function App() {
       {/* Your content */}
       <div className="relative z-10 w-full flex flex-col">
         <div className="">
-          <Header />
+          <Header page={pageType}/>
           <div className="flex flex-col justify-center pt-[160px]">
 
             <div className="flex flex-col justify-center items-center gap-12">
