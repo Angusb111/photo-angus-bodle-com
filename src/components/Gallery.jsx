@@ -61,7 +61,7 @@ export default function Gallery({ albumId }) {
       {/* Fullscreen modal */}
       {selectedIndex !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={handleClose}>
-          <div className="relative max-w-6xl w-full flex justify-center">
+          <div className="relative max-w-8/10 w-full flex justify-center">
             <img
               src={`https://ghnrakeyvviwyynpxjgm.supabase.co/storage/v1/object/public/images/${photos[selectedIndex].filename}`}
               alt={photos[selectedIndex].filename}
