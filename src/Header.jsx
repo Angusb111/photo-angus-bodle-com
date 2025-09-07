@@ -6,7 +6,7 @@ function goBack() {
 
 function Header({ albumName, page }) {
   return (
-        <div className="flex flex-nowrap top-0 items-center justify-between p-1 sm:p-4 w-full">
+        <div className="flex flex-nowrap top-0 items-center justify-between p-1 pb-0 pt-2 sm:p-4 w-full">
             <div className="flex items-center flex-row justify-between sm:justify-start w-full gap-0 sm:gap-16">
                 <img className="aspect-418.88/128 h-20 sm:h-32" id="pageHeaderLogo" src={myHeroW} alt="Logo" />
 

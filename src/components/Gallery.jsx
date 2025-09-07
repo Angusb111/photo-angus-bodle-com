@@ -60,7 +60,7 @@ export default function Gallery({ albumId }) {
 
       {/* Fullscreen modal */}
       {selectedIndex !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90" onClick={handleClose}>
           <div className="relative max-w-6xl w-full flex justify-center">
             <img
               src={`https://ghnrakeyvviwyynpxjgm.supabase.co/storage/v1/object/public/images/${photos[selectedIndex].filename}`}
@@ -95,7 +95,7 @@ export default function Gallery({ albumId }) {
 
           {/* Optional caption under image */}
           {photos[selectedIndex].caption && (
-            <div className="absolute bottom-6 text-center w-full">
+            <div className="absolute sm:flex bottom-6 text-center w-full">
               <p className="inline-block bg-black/70 text-white px-4 py-2 rounded font-[Lexend] font-light">
                 {photos[selectedIndex].caption}
               </p>

@@ -46,6 +46,10 @@ function App() {
       };
     });
 
+    window.addEventListener("load", () => {
+      window.scrollTo(0, 0);
+    });
+
     function moveBlobs() {
       const data = blobsData.current;
 

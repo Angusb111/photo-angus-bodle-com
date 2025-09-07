@@ -51,7 +51,7 @@ export default function Home() {
   if (loading) return <p>Loading albums...</p>
 
   return (
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap box-border">
         {albums.map(album => {
           const albumPhotos = photos[album.album_id] || [];
           const firstPhoto = albumPhotos[0]; // First photo for the album
@@ -61,7 +61,7 @@ export default function Home() {
 
 
           return (
-            <Link className="bg-cover bg-center aspect-3/2 rounded-lg flex-grow basis-1/2 m-3" style={{ backgroundImage: `url(${imageUrl})` }} key={album.album_id} to={`/album/${album.album_id}`} state={{ albumName: album.album_name }}>
+            <Link className="bg-cover bg-center aspect-3/2 rounded-lg flex-grow basis-1/2 sm:max-w-[calc(50%-24px)] box-border m-3" style={{ backgroundImage: `url(${imageUrl})` }} key={album.album_id} to={`/album/${album.album_id}`} state={{ albumName: album.album_name }}>
                 <div className='flex flex-col justify-end size-full sm:w-fill backdrop-saturate-150 backdrop-brightness-70 rounded-sm border-2 border-black shadow-black shadow-2xl'
                 style={{
                   background: `linear-gradient(
